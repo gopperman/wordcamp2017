@@ -387,19 +387,43 @@ add_action( 'rest_api_init', function () {
 					<section><h2>React Basics</h2></section>
 					<section><h3>Powerful ES6 Features, like Fetch and Promises</h3></section>
 
-					<section>(Code Example)</section>
-
 					<section>
-						<h3>Simple state management</h3>
-					</section>
+						<pre><code data-trim data-noescape>
+const requestUrl = 'http://breedtv.com/wp-json/btv/v1/random/20?_jsonp=receiveData'
 
-					<section>(Code Example)</section>
+fetchJsonp(requestUrl).then((response) => {
+	return response.json()
+})
+.then((data) => {
+	this.setState({
+		response: data,
+	})
+})
+.catch((err) => {
+	// Do error handling
+	})
+})
+</code></pre>
+					</section>
 
 					<section>
 						<h3>Lifecycles</h3>
 					</section>	
 
-					<section>(Code Example)</section>
+					<section>
+						<pre><code data-trim data-noescape>
+// Play a video after component mounts
+componentDidMount() {
+	this.playVideo()
+}
+
+// If our state changes, re-render the component
+shouldComponentUpdate(nextProps, nextState) {
+	return !_.isEqual(this.state, nextState)
+}
+						</code></pre>
+						<p>More about lifecycles: <a href="http://busypeoples.github.io/post/react-component-lifecycle/">here</a>
+					</section>
 
 					<section>
 						<h3>Easy Templating with JSX and Reusable Components</h3>
@@ -409,10 +433,29 @@ add_action( 'rest_api_init', function () {
 
 					<section>
 						<h3>Encourages unidirectional data flow with flux/redux</h3>
-						<p>Components define interface for interacting with their parents...and only receive the information they need to do their jobs</p>
+						<p>Components define interface for interacting with their parents...and should only receive the information they need to do their jobs</p>
 					</section>
 
-					<section>(Code Example)</section>
+					<section>
+						<pre><code data-trim data-noescape>
+import React, { Component } from 'react'
+import {PropTypes} from 'prop-types'
+
+class CarListing extends Component {
+	...
+	render() {
+		const { videoUrl } = this.props
+		... 
+	}
+}
+
+CarListing.propTypes = {
+	car: PropTypes.object.isRequired,
+}
+
+export default CarListing
+						</code></pre>
+					</section>
 				</section>
 				<section data-markdown class="text__small">
 					## Tools and Frameworks

@@ -12,9 +12,10 @@ View the presentation at [https://gopperman.github.io/wordcamp2017/](https://gop
 * [wp-api-react](https://github.com/DreySkee/wp-api-react): A standalone react framework, with flux support (via Alt). Read more about it [here](https://medium.freecodecamp.org/how-to-build-react-apps-on-top-of-the-wordpress-rest-api-bcc632808025#.tkbzho7ms)
 
 ## Further Reading
-* [Intro to React](https://facebook.github.io/react/tutorial/tutorial.html)
 * [WP REST API v2 Guide](http://v2.wp-api.org/)
 * [WP REST API Developer Reference](https://developer.wordpress.org/rest-api/reference/)
+* [Intro to React](https://facebook.github.io/react/tutorial/tutorial.html)
+* [Understanding the React Component Lifecycle](http://busypeoples.github.io/post/react-component-lifecycle/)
 * [Flux Overview](https://facebook.github.io/flux/docs/in-depth-overview.html#content)
 * [Redux Guide](http://redux.js.org/)
 * (Video) [Scott Taylor: REST in Action – The Live Coverage Platform at the New York Times](https://videopress.com/v/jBvi0Nfq)
