@@ -148,11 +148,241 @@
 						</aside>
 					</section>
 				</section>
-
 				<section>
 					<section><h2>The WordPress REST API</h2></section>
-				</section>
+					<section><h3>/wp-json/wp-json/v2/posts?search=dance</h3></section>
+					<section>
+						<pre><code data-trim data-noescape>
+[
+  {
+    "_links": {
+      "about": [
+        {
+          "href": "http://breedtv.com/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://breedtv.com/wp-json/wp/v2/users/2"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://breedtv.com/wp-json/wp/v2/posts"
+        }
+      ],
+      "curies": [
+        {
+          "href": "https://api.w.org/{rel}",
+          "name": "wp",
+          "templated": true
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://breedtv.com/wp-json/wp/v2/comments?post=5864"
+        }
+      ],
+      "self": [
+        {
+          "href": "http://breedtv.com/wp-json/wp/v2/posts/5864"
+        }
+      ],
+      "version-history": [
+        {
+          "href": "http://breedtv.com/wp-json/wp/v2/posts/5864/revisions"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://breedtv.com/wp-json/wp/v2/media?parent=5864"
+        }
+      ],
+      "wp:term": [
+        {
+          "embeddable": true,
+          "href": "http://breedtv.com/wp-json/wp/v2/categories?post=5864",
+          "taxonomy": "category"
+        },
+        {
+          "embeddable": true,
+          "href": "http://breedtv.com/wp-json/wp/v2/tags?post=5864",
+          "taxonomy": "post_tag"
+        }
+      ]
+    },
+    "author": 2,
+    "categories": [
+      2,
+      6
+    ],
+    "comment_status": "closed",
+    "content": {
+      "protected": false,
+      "rendered": ""
+    },
+    "date": "2016-08-16T03:42:13",
+    "date_gmt": "2016-08-16T03:42:13",
+    "excerpt": {
+      "protected": false,
+      "rendered": ""
+    },
+    "featured_media": 0,
+    "format": "standard",
+    "guid": {
+      "rendered": "http://breedtv.com/?p=5864"
+    },
+    "id": 5864,
+    "link": "http://breedtv.com/christopher-walken-dance-now/",
+    "meta": [],
+    "modified": "2016-08-16T03:42:13",
+    "modified_gmt": "2016-08-16T03:42:13",
+    "ping_status": "closed",
+    "slug": "christopher-walken-dance-now",
+    "status": "publish",
+    "sticky": false,
+    "tags": [
+      629,
+      861,
+      287
+    ],
+    "template": "",
+    "title": {
+      "rendered": "Christopher Walken Dance Now"
+    },
+    "type": "post",
+    "video_url": "https://vimeo.com/90407771"
+  },
+  ...
+]
+						</code></pre>
+					</section>
+					<section>
+						<h3>Adding Custom Fields</h3>
+						<pre><code data-trim data-noescape>
+// functions.php
+function my_rest_prepare_post( $data, $post, $request ) {
+  $_data = $data->data;
+  $_data['URL'] = get_post_meta( $post->ID, 'URL', true );
+  $data->data = $_data;
+  return $data;
+}
+add_filter( 'rest_prepare_post', 'my_rest_prepare_post', 10, 3 );
+						</code></pre>
+					</section>
+					<section>
+						<h2>Custom Endpoints</h2>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape>
+/**
+ * Grab random posts
+ *
+ * @param array $data Options for the function.
+ * @return array|null a collection of randon posts,  * or null if none.
+ */
+function get_random_posts( $data ) {
+  $posts = get_posts( array(
+    'post_type' => 'post',
+    'posts_per_page' => $data['num'],
+    'orderby' => 'rand',
+  ) );
 
+  if ( empty( $posts ) ) {
+    return null;
+  }
+
+  return $posts;
+}
+						</code></pre>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape>
+add_action( 'rest_api_init', function () {
+  register_rest_route( 'btv/v1', '/random/(?P<num>\d+)', array(
+    'methods' => 'GET',
+    'callback' => 'get_random_posts',
+  ) );
+} );
+						</code></pre>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape>
+	[
+		{
+			"ID": 257,
+			"post_author": "2",
+			"post_date": "2013-08-13 02:11:40",
+			"post_date_gmt": "2013-08-13 02:11:40",
+			"post_content": "",
+			"post_title": "Let's Paint a Lion, Exercise, and Play Chess TV",
+			"post_excerpt": "",
+			"post_status": "publish",
+			"comment_status": "closed",
+			"ping_status": "open",
+			"post_password": "",
+			"post_name": "lets-paint-a-lion-exercise-and-play-chess-tv",
+			"to_ping": "",
+			"pinged": "",
+			"post_modified": "2014-08-09 19:08:06",
+			"post_modified_gmt": "2014-08-09 19:08:06",
+			"post_content_filtered": "",
+			"post_parent": 0,
+			"guid": "http://breedtv.gopperman.com/?p=257",
+			"menu_order": 0,
+			"post_type": "post",
+			"post_mime_type": "",
+			"comment_count": "0",
+			"filter": "raw"
+		},
+		...
+	]
+						</code></pre>
+					</section>
+					<section>
+						<p>Ideally, we'd want to edit the data returned by the API to include everything we need, no more or no less, in one response:</p>
+						<pre><code data-trim data-noescape>
+
+	[
+	  {
+	    "src": "youtube",
+	    "id": "IdsKs4lvuBE",
+	    "title": "pathways",
+	    "slug": "pathways",
+	    "tags": [
+	      {
+	        "name": "animation",
+	        "slug": "animation"
+	      },
+	      {
+	        "name": "Cool 3D World",
+	        "slug": "cool-3d-world"
+	      },
+	      {
+	        "name": "shorts",
+	        "slug": "shorts-2"
+	      }
+	    ]
+	  },
+	  {
+	    "src": "youtube",
+	    "id": "1JFXHs_Efe8",
+	    "title": "Stewart Lee “Rap Singers”",
+	    "slug": "stewart-lee-rap-singers",
+	    "tags": [
+	      {
+	        "name": "comedy",
+	        "slug": "comedy-2"
+	      }
+	    ]
+	  },
+	  ...
+	]
+						</code></pre>
+					</section>
+				</section>
 				<section>
 					<section><h2>React Basics</h2></section>
 					<section><h3>Powerful ES6 Features, like Fetch and Promises</h3></section>
