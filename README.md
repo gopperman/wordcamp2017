@@ -1,6 +1,8 @@
 # Building an App with WordPress’ REST API
 Presentation for Boston WordCamp 2017. This presentation was made with [reveal.js](https://github.com/hakimel/reveal.js).
 
+View the presentation at [https://gopperman.github.io/wordcamp2017/](https://gopperman.github.io/wordcamp2017/)
+
 ## Tools and Frameworks
 * [Basic Authentication](https://github.com/WP-API/Basic-Auth): An authentication plugin for WordPress
 * [create-react-app](https://github.com/facebookincubator/create-react-app): The easiest way to bootstrap React apps with minimal configuration
