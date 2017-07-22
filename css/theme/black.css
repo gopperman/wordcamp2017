@@ -10,12 +10,37 @@ section.has-light-background, section.has-light-background h1, section.has-light
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: #222;
-  background-color: #222; }
+  background: #002b36;
+  background-color: #002b36; }
+
+footer {
+  background: #DC5886;
+  color: #fff;
+  font-size: 1.4em;
+  padding: 5px 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.right {
+  float: right;
+}
 
 .reveal {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Open Sans", Helvetica, sans-serif;
   font-size: 42px;
   font-weight: normal;
   color: #fff; }
