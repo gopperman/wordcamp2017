@@ -3,6 +3,8 @@ Presentation for Boston WordCamp 2017. This presentation was made with [reveal.j
 
 View the presentation at [https://gopperman.github.io/wordcamp2017/](https://gopperman.github.io/wordcamp2017/)
 
+View the (unfinished) demo source code at: [https://github.com/gopperman/breedtv-react](https://github.com/gopperman/breedtv-react)
+
 ## Tools and Frameworks
 * [Basic Authentication](https://github.com/WP-API/Basic-Auth): An authentication plugin for WordPress
 * [create-react-app](https://github.com/facebookincubator/create-react-app): The easiest way to bootstrap React apps with minimal configuration
