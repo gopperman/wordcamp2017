@@ -36,11 +36,24 @@
 						<img class="img__round" data-src="img/headshot.png" />
 						<h3>Greg Opperman</h3>
 						<p>Twitter: <a href="https://twitter.com/gopperman">@gopperman</a></p>
-						<p>Github: <a href="https://github.com/gopperman">also @gopperman</a></p>
+						<p>Github: also <a href="https://github.com/gopperman">@gopperman</a></p>
 						<p>
 							<a href="http://bostonglobe.com">Boston Globe</a> / 
 							<a href="http://boston.com">Boston.com</a>
 						</p>
+						<aside class="notes">
+							Hi, my name is Greg. I work for the Boston Globe. I've been doing WordPress development for many years, and I just started picking up React last year, for the Globe's Election app. Boston.com is in Wordpress, and we have a couple of things in React. In my free time I make incredibly dumb apps for my own amusement, and today I'm going to show you one that is in progress.
+						</aside>
+					</section>
+					<section>
+						<h2>Check Me Out</h2>
+						<img data-src="img/checkout.gif" />
+					</section>
+					<section>
+						<h3>This talk is open-source!</h3>
+						<ul>
+							<li><a href="https://github.com/gopperman/wordcamp2017">https://github.com/gopperman/wordcamp2017</a></li>
+							<li><a href="http://gopperman.github.io/wordcamp-2017">http://gopperman.github.io/wordcamp-2017</a></li>
 					</section>
 					<section data-background-image="img/raisehand.gif" data-background-size="100%" data-background-repeat="no-repeat">
 						<h2>Let's take a quick poll</h2>
@@ -50,11 +63,17 @@
 							- JSON
 							- ES6
 							- React
+							- Cats
+							- Dogs
 						</aside>
 					</section>
 				</section>
 				<section>
 					<section><h2>Why?</h2></section>
+						<aside class="notes">
+						 	- Why would you want to frankenstein two very different programming paradigms together?
+						 	- Is this going to be hard?
+						</aside>
 					<section>
 						WordPress is a fantastic platform for managing content...
 					</section>
@@ -64,8 +83,13 @@
 							<li>Content Management</li>
 							<li>Custom Fields</li>
 							<li>Taxonomy</li>
-							<li>User Authentication</li>
+							<li>Authentication &amp; Security</li>
 						</ul>
+						<aside class="notes">
+							- When we switched Boston.com to WordPress, editorial saw a big boost in productivity and overall happiness with their workflow.
+							- ACF / Fieldmanager
+							- WordPress in't the most secure platform, but we all benefit from huge community support and frequent updates
+						</aside>
 					</section>
 					<section>
 						<h2>HOWEVER</h2>
@@ -119,6 +143,9 @@
 								</ul>
 							</div>
 						</div>
+						<aside class="notes">
+							Say you want a newsletter signup. Does react do that? Does WordPress? A plugin maybe?
+						</aside>
 					</section>
 					<section>
 						<h3>Option 2: Create a Standalone App</h3>
@@ -137,6 +164,7 @@
 									<li>Potential cross-origin and authentication problems</li>
 								</ul>
 						</div>
+						<p class="clear">If you want to do this, I made <a href="https://github.com/gopperman/wp-react-skeleton">a small theme</a> that will help you</p>
 						</div>
 						<aside class="notes">
 							- Theme is responsible for defining information architecture and providing content
@@ -147,9 +175,10 @@
 
 							- Developers can work on the API and the app in parallel
 
-							- Host your app anyway
+							- Host your app anywhere
 
-							- Render your app server-side on the first load, then update using ajax
+
+							- Render your app server-side on the first load, then update using ajax. Take advantage of webpack
 
 							- There are reasonable solutions for cross-origin security and authentication
 						</aside>
