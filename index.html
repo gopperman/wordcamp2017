@@ -33,7 +33,7 @@
 					</section>
 					<section>
 						<h2>About Me</h2>
-						<img data-src="img/headshot.png" />
+						<img class="img__round" data-src="img/headshot.png" />
 						<h3>Greg Opperman</h3>
 						<p>Twitter: <a href="https://twitter.com/gopperman">@gopperman</a></p>
 						<p>Github: <a href="https://github.com/gopperman">also @gopperman</a></p>
@@ -430,7 +430,14 @@ shouldComponentUpdate(nextProps, nextState) {
 						<h3>Easy Templating with JSX and Reusable Components</h3>
 					</section>
 
-					<section>(Code Example)</section>
+					<section>
+						<pre data-noescape><code data-trim data-noescape>
+import React, { Component } from 'react';
+import Sidebar from './components/Sidebar.js'
+import Video from './components/Video.js'
+						</code></pre>
+						<img data-src="img/code.png" />
+					</section>
 
 					<section>
 						<h3>Encourages unidirectional data flow with flux/redux</h3>
@@ -442,7 +449,7 @@ shouldComponentUpdate(nextProps, nextState) {
 import React, { Component } from 'react'
 import {PropTypes} from 'prop-types'
 
-class CarListing extends Component {
+class Video extends Component {
 	...
 	render() {
 		const { videoUrl } = this.props
@@ -450,11 +457,11 @@ class CarListing extends Component {
 	}
 }
 
-CarListing.propTypes = {
-	car: PropTypes.object.isRequired,
+Video.propTypes = {
+	videoUrl: PropTypes.string.isRequired,
 }
 
-export default CarListing
+export default Video
 						</code></pre>
 					</section>
 				</section>

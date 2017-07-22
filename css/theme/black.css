@@ -282,10 +282,14 @@ section.finale {
 /*********************************************
  * IMAGES
  *********************************************/
-.reveal section img {
+.reveal section img.img__round {
   border-radius: 200px;
   max-width: 200px;
   max-height: 200px;
+}
+
+.reveal section img {
+  width: 100%;
 }
 
 .reveal section img.plain {
