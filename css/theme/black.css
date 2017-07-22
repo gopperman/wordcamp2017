@@ -39,6 +39,11 @@ footer a {
   float: right;
 }
 
+section.finale {
+  background: rgba(0,0,0,0.7) !important;
+  padding: 20px;
+}
+
 .reveal .col__container .col {
   display: inline-block;
   float: left;
@@ -49,6 +54,10 @@ footer a {
 
 .reveal .text__blue {
   color: #002b36;
+}
+
+.reveal .text__small li {
+  font-size: .8em !important;
 }
 
 .reveal .text__overlay {
@@ -118,7 +127,6 @@ footer a {
   line-height: 1.3; }
 
 /* Ensure certain elements are never larger than the slide itself */
-.reveal img,
 .reveal video,
 .reveal iframe {
   max-width: 95%;
@@ -275,10 +283,10 @@ footer a {
  * IMAGES
  *********************************************/
 .reveal section img {
-  margin: 15px 0px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+  border-radius: 200px;
+  max-width: 200px;
+  max-height: 200px;
+}
 
 .reveal section img.plain {
   border: 0;

@@ -13,5 +13,6 @@ Presentation for Boston WordCamp 2017. This presentation was made with [reveal.j
 * [Intro to React](https://facebook.github.io/react/tutorial/tutorial.html)
 * [WP REST API v2 Guide](http://v2.wp-api.org/)
 * [WP REST API Developer Reference](https://developer.wordpress.org/rest-api/reference/)
+* [Flux Overview](https://facebook.github.io/flux/docs/in-depth-overview.html#content)
 * [Redux Guide](http://redux.js.org/)
 * (Video) [Scott Taylor: REST in Action – The Live Coverage Platform at the New York Times](https://videopress.com/v/jBvi0Nfq)
