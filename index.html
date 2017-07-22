@@ -430,7 +430,7 @@ add_action( 'rest_api_init', function () {
 						<pre><code data-trim data-noescape>
 const requestUrl = 'http://breedtv.com/wp-json/btv/v1/random/20'
 
-fetchJsonp(requestUrl).then((response) => {
+fetch(requestUrl).then((response) => {
 	return response.json()
 })
 .then((data) => {
