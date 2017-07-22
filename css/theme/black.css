@@ -39,6 +39,23 @@ footer a {
   float: right;
 }
 
+.reveal .col__container .col {
+  display: inline-block;
+  float: left;
+  font-size: .8em;
+  width: 50%;
+  padding: 0 15px;
+}
+
+.reveal .text__blue {
+  color: #002b36;
+}
+
+.reveal .text__overlay {
+  padding: 40px;
+  background: rgba(255,255,255,.6);
+}
+
 .reveal {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-size: 42px;
@@ -75,7 +92,6 @@ footer a {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;
-  text-transform: uppercase;
   text-shadow: none;
   word-wrap: break-word; }
 
@@ -106,7 +122,12 @@ footer a {
 .reveal video,
 .reveal iframe {
   max-width: 95%;
-  max-height: 95%; }
+  max-height: 95%;
+  height: 80vh;
+  width: 100vw;
+  border: 20px solid #222;
+  border-radius: 10px; 
+}
 
 .reveal strong,
 .reveal b {

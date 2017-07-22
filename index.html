@@ -40,13 +40,119 @@
 						</p>
 						<p>Twitter: <a href="https://twitter.com/gopperman">@gopperman</a></p>
 						<p>Github: <a href="https://github.com/gopperman">also @gopperman</a></p>
+					</section>
+					<section data-background-image="img/raisehand.gif" data-background-size="100%" data-background-repeat="no-repeat">
+						<h2>Let's take a quick poll</h2>
+						<aside class="notes">
+							How many are familiar with?
+							- REST
+							- JSON
+							- ES6
+							- React
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section><h2>Why?</h2></section>
+					<section>WordPress is a fantastic platform for managing content...and content producers love it</section>
+					<section>
+						<h3>It does what it does extremely well...</h3>
+						<ul>
+							<li>Content Management</li>
+							<li>Custom Fields</li>
+							<li>Taxonomy</li>
+							<li>User Authentication</li>
+						</ul>
+						<aside class="notes">
+							As an advanced developer, it leaves me wanting for many things. Developing a WordPress theme can be tedious. Writing disparate plugins and theme functions can create a chaotic architecture. Many great theme frameworks exist, like Sage and Timber, but those are end-runs around WordPress' limitations. If I'm coding practically from scratch, why not choose my own tools?
+						</aside>
+					</section>
+					<section>
+						<h3>Use the WP REST API if:</h3>
+						<ul>
+							<li>You need to create a rich, interactive experience</li>
+							<li>Your website is action-oriented and stateful, not purely content-driven</li>
+							<li>You'd like to release your app on multiple platforms</li>
+							<li>Most of your website is a basic blog or website, except...</li>
+						</ul>
+						<aside class="notes">
+							For example, you might be making a basic blog for a music venue, except they need a ticket reservation system
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section><h1>Let's look at some examples</h1></section>
+					<section data-background-image="img/wordpresscom.png" data-background-size="100%" data-background-repeat="no-repeat">
+						<h2 class="text__blue text__overlay">WordPress.com: Calypso</h2>
+					</section>
+					<section data-background-image="img/nyt.png" data-background-size="100%" data-background-repeat="no-repeat">
+						<h2 class="text__blue text__overlay">The New York Times uses the WP REST API to power their live coverage blogs, with Backbone and React. </h2>
+					</section>
+					<section>
+						<iframe class="embed__demo" data-src="http://wheatoncollege.edu/map/"></iframe>
+					</section>
+				</section>
+				<section>
+					<section><h2>Architectural Approaches</h2></section>
+					<section>
+						<h3>Option 1: Integrate your app directly in a theme</h3>
+						<div class="col__container">
+							<div class="col">
+								<h4>Pros:</h4>
+								<ul>
+									<li> Take advantage of WordPress' theme features, <i>a la carte</i></li>
+									<li> Can hybridize standard content-driven pages with more interactive experiences</li>
+								</ul>
+							</div>
+							<div class="col">
+								<h4>Cons:</h4>
+								<ul>
+									<li>Not appropriate for large, complex apps</li>
+									<li>Who's responsible for what? (e.g. routing)</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>Option 2: Create a Standalone App</h3>
+						<div class="col__container">
+							<div class="col col__left">
+								<h4>Pros:</h4>
+								<ul>
+									<li> Loosely Coupled
+									</li>
+									<li> Isomorphic rendering and other optimizations</li>
+									<li>Host your app anywhere</li>
+								</ul>
+							</div>
+							<div class="col col__right">
+								<h4>Cons:</h4>
+								<ul>
+									<li>Potential cross-origin and authentication problems</li>
+								</ul>
+						</div>
+						</div>
+						<aside class="notes">
+							- Theme is responsible for defining information architecture and providing content
 
+							- App is responsible for rendering content
+
+							- You can swap out either your javascript of your CMS for a new platform, no problem
+
+							- Developers can work on the API and the app in parallel
+
+							- Host your app anyway
+
+							- Render your app server-side on the first load, then update using ajax
+
+							- There are reasonable solutions for cross-origin security and authentication
+						</aside>
 					</section>
 				</section>
 			</div>
 		</div>
 		<footer>
-			<a href="https://twitter.com/gopperman">@gopperman</a> #wordcamp
+			<a href="https://twitter.com/gopperman">@gopperman</a> #wcbos
 			<span class="right"><a href="http://gopperman.github.io/wordcamp-2017">http://gopperman.github.io/wordcamp-2017</a></span>
 		</footer>
 		<script src="lib/js/head.min.js"></script>
